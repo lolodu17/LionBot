@@ -57,8 +57,6 @@ bot.on("message", async message => {
             prefix = '-';
         }
 
-        if(config.blacklist.includes(message.author.id) === true) return;
-
         bot.serverQueue = bot.queue.get(message.guild.id);
 
         let messageArray = message.content.split(/\s+/g);
