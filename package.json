@@ -1,0 +1,25 @@
+{
+  "name": "icebot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary": "^1.9.1",
+    "discord.js": "^11.2.1",
+    "eslint": "^4.11.0",
+    "get-youtube-id": "^1.0.0",
+    "jimp": "^0.2.28",
+    "opusscript": "0.0.4",
+    "quick.db": "^2.0.13",
+    "request": "^2.83.0",
+    "simple-youtube-api": "^3.0.1",
+    "uws": "^8.14.1",
+    "youtube-info": "^1.1.2",
+    "ytdl-core": "^0.18.1"
+  }
+}

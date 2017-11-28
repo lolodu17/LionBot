@@ -1,0 +1,11 @@
+CheeseBot Commands:
+
+**Admin / Mod**
+purge, kick, ban
+==============================
+**Fun / Utility**
+ping, help, ball
+==============================
+**Music**
+play, pause, np, queue, resume,
+volume, stop,
