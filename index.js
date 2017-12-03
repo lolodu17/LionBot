@@ -16,14 +16,14 @@ bot.on("guildCreate", server => {
         serverb.addField("Creation", `${server.createdAt}`);
         bot.channels.get("380203802067861514").send(serverb);
         bot.channels.get("380203802067861514").send("I am now in " + bot.guilds.size);
-        bot.user.setGame(`with ${bot.guilds.size} Servers. | -help`);
+        bot.user.setGame(`with ${bot.guilds.size} Servers. | l.help`);
 });
 
 bot.on("guildDelete", server => {
         var serverb = new Discord.RichEmbed();
         bot.channels.get("380203802067861514").send("Left server! " + server.name);
         bot.channels.get("380203802067861514").send("I am now in " + bot.guilds.size);
-        bot.user.setGame(`with ${bot.guilds.size} Servers. | -help`);
+        bot.user.setGame(`with ${bot.guilds.size} Servers. | l.help`);
 });
 
 bot.login(process.env.TOKEN);
@@ -44,7 +44,7 @@ fs.readdir('./commands/', (err, files) => { // This reads the directory of the c
 });
 
 bot.on("ready", () => {
-    bot.user.setGame(`with ${bot.guilds.size} Servers. | -help`);
+    bot.user.setGame(`with ${bot.guilds.size} Servers. | l.help`);
     console.log("bot Logged in");
 });
 
@@ -54,7 +54,7 @@ bot.on("message", async message => {
         if(i.text) {
             prefix = i.text;
         } else {
-            prefix = '-';
+            prefix = 'l.';
         }
 
         bot.serverQueue = bot.queue.get(message.guild.id);
