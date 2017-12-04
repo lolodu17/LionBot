@@ -1,4 +1,4 @@
-module.exports.run = async(bot, message, args) => {
+module.exports.run = async(bot, message, args, func) => {
     if(!bot.serverQueue || !message.member.voiceChannel) return message.channel.send("You must be in a voiceChannel. `CHANNEL_USER_ERR`");
     if(bot.serverQueue.loop === true) {
         bot.serverQueue.loop === false;
