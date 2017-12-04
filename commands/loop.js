@@ -1,11 +1,12 @@
 module.exports.run = async(bot, message, args, func) => {
-    if(!bot.serverQueue || !message.member.voiceChannel) return message.channel.send("You must be in a voiceChannel. `CHANNEL_USER_ERR`");
-    if(bot.serverQueue.loop === true) {
-        bot.serverQueue.loop === false;
-        func.embed(message.channel, "I've disabled loopmode");
-    } else {
-        bot.serverQueue.loop === true;
+    const serverQueue = bot.queue.get(message.guild.id);
+    if(!serverQueue || !message.member.voiceChannel) return message.channel.send("You must be in a voiceChannel. `CHANNEL_USER_ERR`. Or nothing is playing `NO_QUEUED_SONGS`");
+    if(bot.serverQueue.loop == false) {
+        serverQueue.loop == true;
         func.embed(message.channel, "I've enabled loopmode");
+    } else {
+        serverQueue.loop == false;
+        func.embed(message.channel, "I've disabled loopmode");
     }
 }
 
