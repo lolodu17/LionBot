@@ -65,7 +65,12 @@ function play(guild, song, bot, message) {
     dispatcher.on("end", () => {
         serverQueue.songs.shift();
         setTimeout(() => {
-            play(guild, serverQueue.songs[0], bot, message);
+            if(serverQueue.loop === true) {
+                play(guild, serverQueue.songs[0], bot, message);
+            } else {
+                serverQueue.songs.shift();
+                play(guild, serverQueue.songs[0], bot, message);
+            }
         }, 250);
     });
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
@@ -86,6 +91,7 @@ async function handleVideo(video, message, voiceChannel, bot, playlist = false) 
             connection: null,
             songs: [],
             volume: 2,
+            loop: false,
             playing: true
         };
 
