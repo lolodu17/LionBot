@@ -73,7 +73,8 @@ function play(guild, song, bot, message) {
             }
         }, 250);
     });
-    dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
+    if(message.guild.id !== "369990397004349440") dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
+    else dispatcher.setVolumeLogarithmic(0.5 / 5);
     message.channel.send(`Started playing **${serverQueue.songs[0].title}**`);
 }
 
