@@ -85,7 +85,7 @@ async function handleVideo(video, message, voiceChannel, bot, playlist = false) 
         url: `https://www.youtube.com/watch?v=${video.id}`,
     };
     if(!serverQueue) {
-        const queueConstruct = {
+        var queueConstruct = {
             textChannel: message.channel,
             voiceChannel: voiceChannel,
             connection: null,
